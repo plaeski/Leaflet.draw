@@ -14,11 +14,11 @@ L.Edit.SimpleShape = L.Handler.extend({
 			className: 'leaflet-div-icon leaflet-editing-icon leaflet-edit-resize'
 		}),
 		touchMoveIcon: new L.DivIcon({
-			iconSize: new L.Point(20, 20),
+			iconSize: new L.Point(15, 15),
 			className: 'leaflet-div-icon leaflet-editing-icon leaflet-edit-move leaflet-touch-icon'
 		}),
 		touchResizeIcon: new L.DivIcon({
-			iconSize: new L.Point(20, 20),
+			iconSize: new L.Point(15, 15),
 			className: 'leaflet-div-icon leaflet-editing-icon leaflet-edit-resize leaflet-touch-icon'
 		}),
 	},

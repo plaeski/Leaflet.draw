@@ -93,7 +93,8 @@ L.Toolbar = L.Class.extend({
 					this._toolbarContainer,
 					buttonIndex++,
 					buttonClassPrefix,
-					modeHandlers[i].title
+					modeHandlers[i].title,
+					modeHandlers[i].iconClass
 				);
 			}
 		}
@@ -152,17 +153,19 @@ L.Toolbar = L.Class.extend({
 		this._actionsContainer = null;
 	},
 
-	_initModeHandler: function (handler, container, buttonIndex, classNamePredix, buttonTitle) {
+	_initModeHandler: function (handler, container, buttonIndex, classNamePredix, buttonTitle, iconClass) {
 		var type = handler.type;
 
 		this._modes[type] = {};
 
 		this._modes[type].handler = handler;
 
+    var className = iconClass ? iconClass : classNamePredix + '-' + type
+
 		this._modes[type].button = this._createButton({
 			type: type,
 			title: buttonTitle,
-			className: classNamePredix + '-' + type,
+			className: className,
 			container: container,
 			callback: this._modes[type].handler.enable,
 			context: this._modes[type].handler
